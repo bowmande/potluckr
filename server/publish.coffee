@@ -1,0 +1,1 @@
+Potlucks = new Meteor.Collection("potlucks")

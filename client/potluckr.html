@@ -1,0 +1,35 @@
+<head>
+  <title>potluckr</title>
+  <link href='//fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Gudea' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <h1><a href='#'>Potluck.r</a></h1>
+  {{>container}}
+</body>
+
+<template name="container">
+  {{#if editing}}
+    {{> edit_potluck}}
+  {{/if}}
+</template>
+
+<template name="edit_potluck">
+  <h2 class="tagline">What Should People Bring?</h2>
+  <div id="new_item">
+    <input type="text" name="name" value="" id="new-name" placeholder="Sides(2)"/>
+  </div>
+  <div id="items">
+    {{#each items}}
+      {{> edit_item}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="edit_item">
+  <div class="item">
+    <span class="name">{{name}}</span>
+    <span class="count">{{count}}</span>
+  </div>
+</template>
