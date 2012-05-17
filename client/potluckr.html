@@ -12,11 +12,13 @@
 <template name="container">
   {{#if editing}}
     {{> edit_potluck}}
+  {{else}}
+		{{> view_potluck}}
   {{/if}}
 </template>
 
 <template name="edit_potluck">
-  <h2 class="tagline">What Should People Bring?</h2>
+  <h2 class="tagline">What should people bring?</h2>
   <div id="new_item">
     <input type="text" name="name" value="" id="new-name" placeholder="Sides(2)"/>
   </div>
@@ -32,4 +34,21 @@
     <span class="name">{{name}}</span>
     <span class="count">{{count}}</span>
   </div>
+</template>
+
+<template name="view_potluck">
+	<h2 class="tagline">What are going to bring?</h2>
+	<div id="items">
+		{{#each items}}
+      {{> view_item}}
+    {{/each}}
+	</div>
+</template>
+
+<template name="view_item">
+	{{#each count_times}}
+  <div class="item">
+    <span class="name">{{../name}}</span>
+  </div>
+	{{/each}}
 </template>
