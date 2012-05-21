@@ -8,7 +8,7 @@ PotluckRouter = Backbone.Router.extend
   new: ->
     potluck = Potlucks.insert({ts: (new Date()).getTime()})
     console.log "Created", potluck
-    this.navigate("#{potluck}/edit")
+    this.navigate("#{potluck}/edit", true)
   main: (id) ->
     Session.set("id",id)
   edit: (id) ->

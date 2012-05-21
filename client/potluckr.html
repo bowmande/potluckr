@@ -31,7 +31,7 @@
 
 <template name="edit_item">
   <div class="item">
-    <span class="name">{{name}}</span>
+    <span class="name">{{title}}</span>
     <span class="count">{{count}}</span>
   </div>
 </template>
@@ -46,9 +46,9 @@
 </template>
 
 <template name="view_item">
-	{{#each count_times}}
   <div class="item">
-    <span class="name">{{../name}}</span>
+    <span class="name">{{title}}</span>
+		<input type="text" name="details" value="{{details}}" class="details" placeholder="Details...">
+		<input type="text" name="person" value="{{name}}" class="person" placeholder="I'll bring this">
   </div>
-	{{/each}}
 </template>

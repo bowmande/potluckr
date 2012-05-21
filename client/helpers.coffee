@@ -7,7 +7,7 @@ make_okcancel_handler = (options) ->
   (evt) ->
     if evt.type == 'keydown' && evt.which == 27
       cancel.call(this, evt)
-    else if evt.type == "keyup" && evt.which == 13
+    else if evt.type == "keyup" && evt.which == 13 || event.type == 'focusout'
       value = String(evt.target.value || "")
       if value
         ok.call(this, value, evt)
