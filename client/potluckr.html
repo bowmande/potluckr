@@ -7,6 +7,9 @@
 <body>
   <h1><a href='#'>Potluck.r</a></h1>
   {{>container}}
+  <footer>
+    
+  </footer>
 </body>
 
 <template name="container">
@@ -20,7 +23,10 @@
 <template name="edit_potluck">
   <h2 class="tagline">What should people bring?</h2>
   <div id="new_item">
-    <input type="text" name="name" value="" id="new-name" placeholder="Sides(2)"/>
+    <input type="text" name="name" value="" id="new-name" placeholder="Side(2)"/>
+  </div>
+  <div class="share">
+    <strong>Sign Up Link: </strong> <a href="{{url}}">{{url}}</a>
   </div>
   <div id="items">
     {{#each items}}
@@ -38,11 +44,18 @@
 
 <template name="view_potluck">
 	<h2 class="tagline">What are going to bring?</h2>
-	<div id="items">
+	<div class="share">
+    <strong>Sign Up Link: </strong> <a href="{{url}}">{{url}}</a>
+  </div>
+	<div id="items" class="view">
 		{{#each items}}
       {{> view_item}}
     {{/each}}
 	</div>
+  <h2 class="tagline">I'll bring something else</h2>
+  <div id="new_item">
+    <input type="text" name="name" value="" id="new-name" placeholder="Side"/>
+  </div>
 </template>
 
 <template name="view_item">

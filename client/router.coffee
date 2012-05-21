@@ -1,11 +1,9 @@
 PotluckRouter = Backbone.Router.extend
   routes:
     "": "index"
-    "new": "new"
     ":id": "main"
     ":id/edit": "edit"
   index: ->
-  new: ->
     potluck = Potlucks.insert({ts: (new Date()).getTime()})
     console.log "Created", potluck
     this.navigate("#{potluck}/edit", true)
